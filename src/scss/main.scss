@@ -80,9 +80,20 @@
   }
 }
 
-.animate-once {
+.load--slow {
   animation: load 1s 2s backwards;
   animation-iteration-count: 1;
+}
+
+.load--fast {
+  animation: load 0.4s 0.2s backwards;
+  animation-iteration-count: 1;
+}
+
+.pulse {
+  &:hover {
+    animation: pulse 0.4s infinite alternate forwards;
+  }
 }
 
 .container {
@@ -201,18 +212,15 @@
     h1 {
       font-size: 1.8rem;
     }
-
-    &:hover {
-      animation: pulse 0.4s infinite alternate forwards;
-    }
   }
 
   .started-game {
     align-self: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
     display: none;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    width: 50%;
 
     & > * {
       border: 0;
@@ -220,8 +228,8 @@
       background-color: white;
       display: inline-block;
       padding: 1.5rem 1rem;
+      flex: 0 0 42%;
       margin: 1rem;
-      flex: 1 0 15%;
       transition: all 0.2s;
       border-radius: 5px;
       text-align: center;

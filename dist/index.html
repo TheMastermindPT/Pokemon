@@ -35,12 +35,12 @@
 
             </div>
         </div>
-        <div class="start-game animate-once">
+        <div class="start-game load--slow pulse">
             <h1>START GAME</h1>
         </div>
         <b class="started-game">
             <button class="move">
-                Growl
+                Growly
             </button>
             <button class="move">
                 Scratch
@@ -54,12 +54,16 @@
     </div>
     </div>
     <script>
-        let start = document.querySelector(".animate-once");
+        const start = document.querySelector(".start-game");
+        const started = document.querySelector(".started-game");
+
         start.addEventListener("mouseover", (event) => {
-            start.classList.remove("animate-once");
+            start.classList.remove("load--slow");
         });
         start.addEventListener("click", (event) => {
-            start.style.transform = "translateY(0)";
+            start.style.display = "none";
+            started.style.display = "flex";
+            started.classList.add("load--fast");
         });
     </script>
 <script type="text/javascript" src="/scripts/main-bundle.js"></script></body>

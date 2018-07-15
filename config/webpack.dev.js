@@ -1,82 +1,82 @@
-const path = require("path");
-const webpack = require("webpack");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: ["./src/client/main.js"]
+    main: ['./src/client/main.js'],
   },
-  mode: "development",
+  mode: 'development',
   output: {
-    filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "../dist"),
-    publicPath: "/"
+    filename: '[name]-bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
   },
   devServer: {
-    contentBase: "dist",
+    contentBase: 'dist',
     overlay: true,
     stats: {
-      colors: true
+      colors: true,
     },
-    hot: true
+    hot: true,
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader"
-          }
+            loader: 'babel-loader',
+          },
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.s?[ac]ss$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader"
+            loader: 'css-loader',
           },
           {
-            loader: "postcss-loader"
+            loader: 'postcss-loader',
           },
           {
-            loader: "sass-loader"
-          }
-        ]
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
+            loader: 'html-loader',
             options: {
-              attrs: ["img:src"]
-            }
-          }
-        ]
+              attrs: ['img:src'],
+            },
+          },
+        ],
       },
       {
         test: /\.(jpg|png|gif|svg)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "imgs/[name].[ext]"
-            }
-          }
-        ]
-      }
-    ]
+              name: 'imgs/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
-      template: "./src/index.html"
-    })
-  ]
+      template: './src/index.html',
+    }),
+  ],
 };
