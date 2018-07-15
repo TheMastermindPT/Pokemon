@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Pokemon | Mini Game</title>
+
+    <link href="/styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="game-title">Pokemon | Battle</h1>
+        <div class="players-box">
+            <div class="player player--1">
+                <h1 class="player__pokemon">Charmander</h1>
+                <img class="player__image" src="/imgs/charmander.png" alt="player1">
+                <div class="player__info">
+                    <h4 class="player__info-name"> Player 1</h4>
+                    <p class="player__info-hp"> 100 / 100HP</p>
+                </div>
+
+            </div>
+            <h1 class="players-box__vs">VS</h1>
+            <div class="player player--2">
+                <h1 class="player__pokemon">Pikachu</h1>
+                <img class="player__image" src="/imgs/pikachu.png" alt="player2">
+                <div class="player__info">
+                    <h4 class="player__info-name"> Player 2</h4>
+                    <p class="player__info-hp"> 100 / 100HP</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="start-game animate-once">
+            <h1>START GAME</h1>
+        </div>
+        <b class="started-game">
+            <button class="move">
+                Growl
+            </button>
+            <button class="move">
+                Scratch
+            </button>
+            <button class="move">
+                Ember
+            </button>
+            <button class="move">
+                Smoke Screen
+            </button>
+    </div>
+    </div>
+    <script>
+        const start = document.querySelector(".animate-once");
+        start.addEventListener("mouseover", (event) => {
+            start.classList.remove("animate-once");
+        });
+    </script>
+    <script type="text/javascript" src="/scripts/main-bundle.js"></script>
+</body>
+
+</html>
