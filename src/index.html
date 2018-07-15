@@ -58,7 +58,9 @@
         start.addEventListener("mouseover", (event) => {
             start.classList.remove("animate-once");
         });
-        start 
+        start.addEventListener("click", (event) => {
+            start.style.transform = "translateY(0)";
+        });
     </script>
 </body>
 
